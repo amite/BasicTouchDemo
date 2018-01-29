@@ -14,7 +14,6 @@ export default class App extends React.Component {
   render() {
     let buttonProps = {
       style: { marginBottom: 10 },
-      color: "mediumseagreen",
       onClick: () => this.handleClick("some custom message"),
       title: "Click my Button"
     }
