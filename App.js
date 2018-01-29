@@ -1,16 +1,17 @@
 import React from "react"
-import { StyleSheet, Text, View } from "react-native"
+import { StyleSheet, Text, View, Alert } from "react-native"
 import MyButton from "./components/MyButton"
 
 export default class App extends React.Component {
   handleClick(msg) {
-    console.log(msg)
+    Alert.alert("MyAlert", "This is important")
   }
 
   render() {
     return (
       <View style={styles.container}>
         <MyButton
+          color={this.props.color}
           onClick={() => this.handleClick("some custom message")}
           title="Click my button"
         />
