@@ -7,12 +7,6 @@ export default class MyButton extends Component {
   }
 
   render() {
-    return (
-      <Button
-        color={this.props.color}
-        onPress={this.props.onClick}
-        title={this.props.title}
-      />
-    )
+    return <Button {...this.props} />
   }
 }

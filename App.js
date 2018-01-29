@@ -4,18 +4,22 @@ import MyButton from "./components/MyButton"
 
 export default class App extends React.Component {
   state = {
-    hidden: false
+    hidden: false,
+    isActive: false
   }
 
   handleClick(msg) {
-    this.setState({ hidden: !this.state.hidden })
+    this.setState({ hidden: !this.state.hidden }, () => {
+      Alert.alert("MyAlert", "This is important")
+    })
   }
 
   render() {
     let buttonProps = {
       style: { marginBottom: 10 },
-      onClick: () => this.handleClick("some custom message"),
-      title: "Click my Button"
+      onPress: () => this.handleClick("some custom message"),
+      title: "Click my Button",
+      disabled: this.state.isActive
     }
 
     return (
